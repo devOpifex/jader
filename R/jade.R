@@ -16,6 +16,9 @@ jader <- \(){
 #' 
 #' @export
 renderer <- \(file, data) {
+  if(tools::file_ext(file) != "jade")
+    return()
+   
   content <- read_lines(file)
   ctx$call("jade.render", content, data)
 }

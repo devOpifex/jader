@@ -17,7 +17,7 @@ remotes::install_github("devOpifex/pugger")
 
 Render the following `test.pug` file.
 
-```pug
+```jade
 !!! 5
 html(lang="en")
   head
