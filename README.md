@@ -13,6 +13,12 @@ templating engine with [ambiorix](https://ambiorix.dev).
 remotes::install_github("devOpifex/pugger")
 ```
 
+## Use
+
+Set the custom template with `app$engine()`
+:warning: on older versions of ambiorix one had to use the `use`
+method.
+
 ## Example
 
 Render the following `test.pug` file.
@@ -45,7 +51,9 @@ library(ambiorix)
 
 app <- Ambiorix$new()
 
-app$use(jader::jader())
+# on older versions of ambiorix
+# app$use(jader::jader())
+app$engine(jader::jader())
 
 app$get("/", \(req, res) {
   res$render(
